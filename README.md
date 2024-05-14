@@ -1,0 +1,1 @@
+# typegoose-ts
