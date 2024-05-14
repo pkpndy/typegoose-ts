@@ -1,0 +1,19 @@
+{
+  "name": "typegoose-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.4.0",
+    "@types/node": "^20.12.12",
+    "mongoose": "^8.3.4",
+    "ts-node": "^10.9.2"
+  }
+}
