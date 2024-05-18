@@ -42,7 +42,9 @@ const run = async () => {
     // const flagIDS = await getFlagIDsFromFlagNames(["flag1", "flag2"]);
     // console.log("flag ids", flagIDS);
 
-    await getAllFlags();
+    // await getAllFlags();
+
+    await deletePackage("firstPackage");
 
     await mongoose.disconnect();
 };
@@ -136,6 +138,17 @@ const deleteFlag = async (flagId: string) => {
 
 
     console.log('Flag deleted successfully.');
+}
+
+const deletePackage = async (packageName: string) => {
+    const packageFound = await PackageModel.find({ packageName }).exec();
+    if (!packageFound) {
+        console.log(`package ${packageName} not found`);
+    }
+
+    await PackageModel.findOneAndDelete({ packageName });
+    await getAllPackages();
+
 }
 
 run().catch((err) => { console.log("error aa gya: ", err); });
