@@ -9,7 +9,7 @@ export class FlagsClass {
     public flagName!: string;
 
     @prop({ required: true })
-    public summary: string;
+    public summary!: string;
 
     @prop({ required: true })
     public flagValue!: string | number;
