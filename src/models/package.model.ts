@@ -9,7 +9,10 @@ export class PackagesClass {
     })
     public packageName!: string;
 
-    @prop({ ref: () => FlagsClass })
+    @prop({
+        ref: () => FlagsClass,
+        set: (array: Ref<FlagsClass>[]) => Array.from(new Set(array))
+     })
     public flagsAssociated?: Ref<FlagsClass>[];
 }
 

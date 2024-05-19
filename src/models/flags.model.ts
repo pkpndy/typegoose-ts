@@ -11,13 +11,13 @@ export class FlagsClass {
     @prop({ required: true })
     public summary!: string;
 
-    @prop({ required: true })
+    @prop({ required: true, default: 0 })
     public flagValue!: string | number;
 
-    @prop({ required: true })
-    public totalPackages!: string | number;
-
-    @prop({ type: () => [String] })
+    @prop({
+        type: () => [String],
+        set: (array: string[]) => Array.from(new Set(array))
+     })
     public packagesAssociated?: string[];
 }
 
